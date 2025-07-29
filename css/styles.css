@@ -201,16 +201,26 @@ header.scrolled .logo-text {
 
 /* Header */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: var(--transition);
-    padding: 0;
+  position: static;
+  width: 100%;
+  transition: var(--transition);
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  z-index: 1000;
 }
 
 body.home header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+body.home header {
+    z-index: 1000;
     background-color: transparent;
 }
 
