@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  if (document.body.classList.contains("home")) {
-    window.addEventListener("scroll", function () {
-      const header = document.querySelector("header");
-      header.classList.toggle("scrolled", window.scrollY > 50);
-    });
-  }
-});
+   const header = document.querySelector("header");
+  if (!header) return;
 
-document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 0) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
   // Mobile Menu Toggle
   const menuToggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
